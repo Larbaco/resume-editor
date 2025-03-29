@@ -1,0 +1,132 @@
+{
+  "baseInfo": {
+    "name": "Thiago Oliveira Cabral",
+    "title": "DevOps Analyst",
+    "contact": {
+      "location": "Goiânia, Goiás, BR",
+      "phone": "+55 66 99956-4016",
+      "email": "thiagoo.cabral@gmail.com",
+      "website": "larbaco.com",
+      "linkedin": "linkedin.com/in/thiagoo.cabral"
+    }
+  },
+  "professional_summary": "DevOps Analyst and Full Stack Developer with expertise in CI/CD pipelines, Kubernetes orchestration, and ITIL-based service management. Proven experience in deployment flow optimization, incident reduction, and process automation for scalable infrastructure. Skilled in cross-functional collaboration to deliver efficient and reliable software solutions.",
+  "technical_skills": [
+    {
+      "name": "OpenText Service Manager",
+      "strength": 5,
+      "description": "Main tool for ITIL service management"
+    },
+    {
+      "name": "Operations, Monitoring and Software Management: ITIL",
+      "strength": 5,
+      "description": "Certified professional with daily implementation experience"
+    },
+    {
+      "name": "Operations, Monitoring and Software Management: IPv4 Network",
+      "strength": 4,
+      "description": "Corporate network management with 200+ simultaneous devices"
+    },
+    {
+      "name": "Operations, Monitoring and Software Management: Active Directory",
+      "strength": 4,
+      "description": "Implementation of group policies for printing infrastructure"
+    },
+    {
+      "name": "Security: Firewall",
+      "strength": 4,
+      "description": "Configuration and maintenance of pfSense firewall solutions"
+    },
+    {
+      "name": "DevOps: Docker",
+      "strength": 4,
+      "description": "Creation and management of containers for development and production environments, integrated with CI/CD pipelines and Kubernetes orchestration."
+    },
+    {
+      "name": "DevOps: Kubernetes",
+      "strength": 4,
+      "description": "Container orchestration in critical environments, ensuring scalability and resilience for cloud applications."
+    },
+    {
+      "name": "AI Prompt Engineering",
+      "strength": 5,
+      "description": "Design and optimization of structured prompts for code generation (Python, JS, Java, C, CSS), data analysis, and image synthesis using LLMs (GPT-4, Claude, DeepSeek-R1) and Stable Diffusion models"
+    }
+  ],
+  "experience": [
+    {
+      "title": "DevOps Analyst",
+      "dates": "2024-03 - Present",
+      "company": "Stefanini Brasil, Brasília, BR",
+      "description": [
+        "Management and optimization of CI/CD pipelines for the National Mining Agency, ensuring efficient and reliable software delivery.",
+        "Maintenance and implementation of CI/CD processes for .NET projects, using Kubernetes for infrastructure management.",
+        "Collaboration with development and operations teams to simplify deployment workflows and improve system reliability.",
+        "Use of Kubernetes for container orchestration, ensuring scalable and resilient infrastructure.",
+        "Monitoring and troubleshooting of pipelines, ensuring minimal downtime and quick resolution of deployment failures.",
+        "Contribution to the automation of build, test, and deployment processes, reducing manual intervention and increasing efficiency."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "dates": "2021-06 - 2024-02",
+      "company": "Stefanini Brasil, Brasília, BR",
+      "description": [
+        "Acted in the development and administration of the ITIL Service Management System (Micro Focus Service Manager) at the Central Bank, leading the management and maintenance of the system with a focus on efficiency and compliance with industry best practices.",
+        "Used technologies such as JavaScript, PowerShell, and RAD to optimize processes and ensure continuous system operation.",
+        "My work resulted in significant improvements in operational efficiency, aligning solutions with the dynamic demands of the corporate environment and contributing to the delivery of high-quality services."
+      ]
+    },
+    {
+      "title": "IT Support",
+      "dates": "2018-02 - 2020-02",
+      "company": "UniCathedral University Center, Barra do Garças, BR",
+      "description": [
+        "Ensured proper functioning and proposed improvements in the university's IT area to add value through planned maintenance and monitoring of various systems.",
+        "Provided hardware support for desktops and servers, monitored systems using Intelbras NVR, and managed wired and wireless networks with pfSense firewall, supporting over 500 simultaneously connected devices.",
+        "Managed network scanning multifunction printers controlled through Windows Active Directory with custom group policies."
+      ]
+    },
+    {
+      "title": "IT Support",
+      "dates": "2017-08 - 2017-12",
+      "company": "Única Consultores de Engenharia Urbana, Cuiabá, BR",
+      "description": [
+        "Ensured proper functioning and proposed improvements within the office's IT scope to add value through planned maintenance and monitoring of various systems."
+      ]
+    },
+    {
+      "title": "Tutor",
+      "dates": "2012-09 - 2015-08",
+      "company": "UFMT",
+      "description": [
+        "Conducted extracurricular activities aimed at clarifying doubts and assisting students in the area of Commercial Programming Languages."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's Degree in Computer Science",
+      "institution": "Federal University of Mato Grosso"
+    }
+  ],
+  "certifications": [
+    "ITIL Foundation v4 - Axelos",
+    "Introduction to Computer Science and Python Programming - MITx",
+    "DevOps Foundation - PeopleCert"
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Website - Larbaco.com",
+      "description": "A personal presentation website developed with React.js, Node.js, hosted on Firebase. The source code is available on GitHub via the link https://github.com/Larbaco/larbaco.com."
+    },
+    {
+      "name": "Resume Editor - Self-Hosted",
+      "description": "Local site for editing resume data used by the portfolio to generate a dynamic resume"
+    }
+  ],
+  "languages": [
+    "Portuguese (Native)",
+    "English (Advanced)"
+  ]
+}

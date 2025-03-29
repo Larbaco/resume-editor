@@ -1,0 +1,131 @@
+/* ===== FORM STRUCTURE ===== */
+.form-group {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== LABELS ===== */
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-xxs);
+    font-weight: 600;
+    /* Slightly bolder for better hierarchy */
+    color: var(--text-color);
+    /* Use main text color instead of dark-tone */
+}
+
+/* ===== INPUTS & TEXTAREAS ===== */
+.form-input,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: white;
+    border: var(--border-width) solid var(--light-tone);
+    border-radius: var(--border-radius-md);
+    padding: 0.85rem 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    /* Ensures consistent font size */
+    transition: all var(--transition-fast);
+    /* Faster transition for snappier feedback */
+}
+
+.form-input:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    /* Softer glow */
+    outline: none;
+}
+
+/* ===== INPUT ICONS ===== */
+.input-with-icon {
+    position: relative;
+    display: flex; /* Enables better alignment control */
+    align-items: center; /* Vertically centers icon with input text */
+}
+
+.input-with-icon input {
+    padding-left: 2.75rem !important; /* Increased space for better icon clearance */
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 55% !important; /* Slightly adjusted for optical centering */
+    transform: translateY(-50%);
+    color: var(--dark-tone);
+    font-size: 1.05rem; /* Slightly larger for better visibility */
+    z-index: 2;
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+.input-icon.fas,
+.input-icon.fab {
+    width: 1rem;
+    /* Fixed width in rem */
+    text-align: center;
+}
+
+/* ===== VALIDATION STATES ===== */
+.form-input:invalid {
+    border-color: var(--danger-color);
+}
+
+.form-input:invalid+.input-icon {
+    color: var(--danger-color);
+}
+
+/* ===== FIELDSET GROUPS ===== */
+fieldset.contact-info {
+    border: 1px solid var(--light-tone);
+    border-radius: var(--border-radius-lg);
+    /* Slightly larger radius */
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+fieldset.contact-info legend {
+    padding: 0 var(--space-xs);
+    font-weight: 600;
+    color: var(--primary-color);
+    /* More prominent */
+}
+
+/* ===== BUTTONS IN FORMS ===== */
+.form-group button {
+    width: auto;
+    margin-top: var(--space-sm);
+    align-self: flex-start;
+    /* Better alignment in flex contexts */
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+
+    .form-input,
+    .form-group input,
+    .form-group textarea {
+        padding: 0.75rem;
+    }
+
+    .input-with-icon input {
+        padding-left: 2.25rem !important;
+        /* Adjusted for mobile */
+    }
+
+    .input-icon {
+        left: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    fieldset.contact-info {
+        padding: var(--space-sm);
+    }
+}

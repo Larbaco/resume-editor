@@ -1,0 +1,6 @@
+/* ===== Visibility Utilities ===== */
+[aria-hidden="true"] {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}

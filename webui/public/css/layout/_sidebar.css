@@ -1,0 +1,198 @@
+/* ===== SIDEBAR CONTAINER ===== */
+.sidebar {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    z-index: var(--z-sidebar);
+    background: white;
+    border-right: 1px solid var(--light-tone);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-slow) ease-in-out;
+    transform: translateX(0);
+}
+
+/* ===== NAVIGATION MENU ===== */
+.sidebar-menu {
+    flex: 1;
+    padding: var(--space-md) 0;
+    overflow-y: auto;
+}
+
+.sidebar-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    padding: 0 var(--space-md);
+    margin: 0;
+    list-style: none;
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-md);
+    background: transparent;
+    color: var(--text-color);
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn i {
+    width: 1.25rem;
+    font-size: 1rem;
+    color: var(--dark-tone);
+    transition: color var(--transition-fast);
+}
+
+.nav-btn.active {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-btn:hover:not(.active) {
+    background-color: rgba(14, 165, 233, 0.05);
+    color: var(--primary-color);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.sidebar-actions {
+    padding: var(--space-md);
+    border-top: 1px solid var(--light-tone);
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: auto;
+    /* Pushes actions to bottom */
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--light-tone);
+    background: white;
+    color: var(--text-color);
+    transition: all var(--transition-fast);
+    text-align: left;
+    position: relative;
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary-color);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+    transition: none;
+}
+
+.action-btn i {
+    font-size: 1rem;
+    width: 1.25rem;
+    color: var(--dark-tone);
+    transition: color var(--transition-fast);
+}
+
+/* Primary Action Button */
+.action-btn.btn--primary {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.action-btn.btn--primary i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.action-btn.btn--primary:hover {
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+}
+
+/* Loading State */
+.action-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.action-btn.loading::after {
+    content: "";
+    position: absolute;
+    right: var(--space-md);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== MOBILE LAYOUT ===== */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: min(100%, 300px);
+        height: 100vh;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Overlay */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        display: none;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Close Button */
+    .sidebar-close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background: none;
+        border: none;
+        color: var(--dark-tone);
+        font-size: 1.25rem;
+        z-index: 1;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,132 @@
+{
+  "baseInfo": {
+    "name": "Thiago Oliveira Cabral",
+    "title": "Analista DevOps",
+    "contact": {
+      "location": "Goiânia, Goiás, BR",
+      "phone": "+55 66 99956-4016",
+      "email": "thiagoo.cabral@gmail.com",
+      "website": "larbaco.com",
+      "linkedin": "linkedin.com/in/thiagoo.cabral"
+    }
+  },
+  "professional_summary": "Analista DevOps e Desenvolvedor Full Stack com expertise em pipelines CI/CD, orquestração Kubernetes e gestão de serviços baseada em ITIL. Experiência comprovada em otimização de fluxos de implantação, redução de incidentes e automação de processos para infraestrutura escalável. Habilidoso em colaboração multifuncional para entregar soluções de software eficientes e confiáveis.",
+  "technical_skills": [
+    {
+      "name": "OpenText Service Manager",
+      "strength": 5,
+      "description": "Ferramenta principal para gestão de serviços ITIL"
+    },
+    {
+      "name": "Operações, Monitoramento e Gestão de Software: ITIL",
+      "strength": 5,
+      "description": "Profissional certificado com experiência diária de implementação"
+    },
+    {
+      "name": "Operações, Monitoramento e Gestão de Software: Rede IPv4",
+      "strength": 4,
+      "description": "Gerenciamento de rede corporativa com 200+ dispositivos simultâneos"
+    },
+    {
+      "name": "Operações, Monitoramento e Gestão de Software: Active Directory",
+      "strength": 4,
+      "description": "Implementação de políticas de grupo para infraestrutura de impressão"
+    },
+    {
+      "name": "Segurança: Firewall",
+      "strength": 4,
+      "description": "Configuração e manutenção de soluções pfSense firewall"
+    },
+    {
+      "name": "DevOps: Docker",
+      "strength": 4,
+      "description": "Criação e gerenciamento de containers para ambientes de desenvolvimento e produção, integrados a pipelines CI/CD e orquestração Kubernetes."
+    },
+    {
+      "name": "DevOps: Kubernetes",
+      "strength": 4,
+      "description": "Orquestração de contêineres em ambientes críticos, garantindo escalabilidade e resiliência para aplicações em nuvem."
+    },
+    {
+      "name": "Engenharia de Prompt de IA",
+      "strength": 5,
+      "description": "Criação e otimização de prompts estruturados para geração de código (Python, JS, Java, C, CSS), análise de dados e síntese de imagens usando LLMs (GPT-4, Claude, DeepSeek-R1) e modelos Stable Diffusion"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Analista DevOps",
+      "dates": "2024-03 - Presente",
+      "company": "Stefanini Brasil, Brasília, BR",
+      "description": [
+        "Gerenciamento e otimização de pipelines CI/CD para a Agência Nacional de Mineração, garantindo entrega de software eficiente e confiável.",
+        "Manutenção e implementação de processos CI/CD para projetos .NET, utilizando Kubernetes para gerenciamento de infraestrutura.",
+        "Colaboração com equipes de desenvolvimento e operações para simplificar fluxos de trabalho de implantação e melhorar a confiabilidade do sistema.",
+        "Utilização de Kubernetes para orquestração de contêineres, garantindo infraestrutura escalável e resiliente.",
+        "Monitoramento e resolução de problemas em pipelines, assegurando tempo mínimo de inatividade e rápida resolução de falhas de implantação.",
+        "Contribuição para a automação de processos de build, teste e implantação, reduzindo intervenção manual e aumentando a eficiência."
+      ]
+    },
+    {
+      "title": "Desenvolvedor Full Stack",
+      "dates": "2021-06 - 2024-02",
+      "company": "Stefanini Brasil, Brasília, BR",
+      "description": [
+        "Atuei no desenvolvimento e administração do Sistema de Gerenciamento de Serviços ITIL (Micro Focus Service Manager) no Banco Central, liderando a gestão e manutenção do sistema com foco em eficiência e conformidade com as melhores práticas do setor.",
+        "Utilizei tecnologias como JavaScript, PowerShell e RAD para otimizar processos e garantir a operação contínua do sistema.",
+        "Minha atuação resultou em melhorias significativas na eficiência operacional, alinhando as soluções às demandas dinâmicas do ambiente corporativo e contribuindo para a entrega de serviços de alta qualidade."
+      ]
+    },
+    {
+      "title": "Suporte T.I.",
+      "dates": "2018-02 - 2020-02",
+      "company": "Centro Universitário UniCathedral, Barra do Garças, BR",
+      "description": [
+        "Garanti o funcionamento adequado e propus melhorias na área de TI da faculdade para agregar valor por meio de manutenção planejada e monitoramento de vários sistemas.",
+        "Forneci suporte de hardware para desktops e servidores, monitorei sistemas usando o Intelbras NVR e gerenciei redes com fio e sem fio com o firewall pfSense, suportando mais de 500 dispositivos conectados simultaneamente.",
+        "Gerenciei impressoras multifuncionais com escaneamento em rede, controladas por meio do Active Directory do Windows com políticas de grupo personalizadas."
+      ]
+    },
+    {
+      "title": "Suporte T.I.",
+      "dates": "2017-08 - 2017-12",
+      "company": "Única Consultores de Engenharia Urbana, Cuiabá, BR",
+      "description": [
+        "Garanti o funcionamento adequado e propus melhorias dentro do escopo de TI do escritório para adicionar valor por meio de manutenção planejada e monitoramento de diversos sistemas."
+      ]
+    },
+    {
+      "title": "Tutor",
+      "dates": "2012-09 - 2015-08",
+      "company": "UFMT",
+      "description": [
+        "Realizei atividades extracurriculares com o objetivo de esclarecer dúvidas e auxiliar os estudantes na área de Linguagens de Programação Comerciais."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bacharelado em Ciência da Computação",
+      "institution": "Universidade Federal de Mato Grosso"
+    }
+  ],
+  "certifications": [
+    "ITIL Foundation v4 - Axelos",
+    "Introdução a ciencia da computação e Programação com Python - MITx",
+    "DevOps Foundation - PeopleCert"
+  ],
+  "projects": [
+    {
+      "name": "Portifolio Site - Larbaco.com",
+      "description": "Um site de apresentação pessoal desenvolvido com React.js, Node.js , hospedado no Firebase. O código-fonte está disponível no GitHub através do link https://github.com/Larbaco/larbaco.com."
+    },
+    {
+      "name": "Resume Editor - Self-Hosted",
+      "description": "Ferramenta desenvolvida em Node.js para edição e geração dinâmica de currículos usado pelo portifólio para gerar um currículo dinänico"
+    }
+  ],
+  "languages": [
+    "Português (Nativo)",
+    "Inglês (Avançado)"
+  ]
+}

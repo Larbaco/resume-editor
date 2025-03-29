@@ -1,0 +1,950 @@
+/* ==============================================
+   CSS Variables (Enhanced Organization)
+   ============================================== */
+:root {
+    /* Color Palette */
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-color: #f5f7fa;
+    --text-color: #333;
+    --light-tone: #ecf0f1;
+    --dark-tone: #7f8c8d;
+
+    /* Semantic Colors */
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+
+    /* Spacing System */
+    --space-unit: 1rem;
+    --space-xxs: calc(0.25 * var(--space-unit));
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: var(--space-unit);
+    --space-md: calc(1.5 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+
+    /* Border Properties */
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+    --border-width: 1px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ==============================================
+   Base Styles (Minimal Changes)
+   ============================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+/* ==============================================
+   Layout Structure (Same Structure, Variables)
+   ============================================== */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: var(--space-sm);
+}
+
+.sidebar {
+    background-color: white;
+    border-right: var(--border-width) solid var(--light-tone);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md) var(--space-sm);
+    width: 250px;
+}
+
+.editor-area {
+    background-color: white;
+    flex: 1;
+    padding: var(--space-lg) 0;
+}
+
+/* ==============================================
+   Component: Card (Unified Card Styles)
+   ============================================== */
+.card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-sm) 0;
+    padding: var(--space-md);
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* ==============================================
+   Component: Buttons (Consolidated Button Styles)
+   ============================================== */
+.btn {
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    gap: var(--space-xs);
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    transition: all var(--transition-normal);
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn--primary:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25);
+}
+
+.btn--danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn--icon {
+    border-radius: 50%;
+    height: 26px;
+    padding: 0;
+    width: 26px;
+}
+
+/* ==============================================
+   Section: Header (Maintained Original Structure)
+   ============================================== */
+#header-section {
+    composes: card;
+    margin: var(--space-sm) 0;
+}
+
+#header-title {
+    border-bottom: 2px solid var(--light-tone);
+    color: var(--primary-color);
+    display: flex;
+    font-size: 1.5rem;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+}
+
+/* ==============================================
+   Form Elements (Enhanced Consistency)
+   ============================================== */
+.form-group {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.form-label {
+    color: var(--dark-tone);
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.form-input {
+    background-color: #f9f9f9;
+    border: var(--border-width) solid var(--light-tone);
+    border-radius: var(--border-radius-md);
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    transition: all var(--transition-normal);
+    width: 100%;
+}
+
+.form-input:focus {
+    background-color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+fieldset.contact-info {
+    border: 1px solid var(--light-tone);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    grid-column: 1 / -1;
+    background-color: #f9f9f9;
+}
+
+fieldset.contact-info legend {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Input with icon container */
+.input-with-icon {
+    position: relative;
+}
+
+/* Icon styling */
+.input-with-icon .input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+/* Adjust input padding to make space for icon */
+.input-with-icon input {
+    padding-left: 40px !important;
+    /* Space for icon */
+    position: relative;
+}
+
+/* Focus state for icon */
+.input-with-icon input:focus+.input-icon {
+    color: var(--primary-color);
+}
+
+/* ==============================================
+   Technical Skills Section
+   ============================================== */
+#skills-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1%;
+}
+
+.skills-container {
+    width: 95%;
+    transition: all 0.3s ease;
+}
+
+.skill-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-right: 2rem;
+    /* Space for remove button */
+}
+
+.skill-item p {
+    color: var(--dark-tone);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.25rem 0;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    top: 5px;
+    right: 10px;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+    transform: scale(1.15);
+}
+
+#add-skill-btn {
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 0.75rem 2rem;
+    margin: 1.5rem auto 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+#add-skill-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25);
+}
+
+
+/* Strength Indicator */
+.skill-item p[data-strength]::before {
+    content: "• ";
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+/* ==============================================
+   Skill Edit Area Styles
+   ============================================== */
+.skill-editor {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.skill-item.editing .skill-editor {
+    display: grid;
+    animation: slideDown 0.3s ease-out;
+}
+
+.skill-editor input,
+.skill-editor textarea {
+    border: 1px solid var(--light-tone);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.skill-editor input:focus,
+.skill-editor textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+    background-color: white;
+}
+
+.strength-select {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.strength-select button {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 2px solid var(--light-tone);
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.strength-select button:hover {
+    border-color: var(--primary-color);
+}
+
+.strength-select button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 3rem;
+}
+
+.btn--secondary {
+    background: transparent;
+    border: 2px solid var(--light-tone);
+    color: var(--dark-tone);
+}
+
+.btn--secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Edit Button Group */
+.skill-buttons {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    top: 75px;
+    right: 10px;
+}
+
+.edit-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.15);
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjust existing skill-item padding */
+.skill-item {
+    padding-right: 4.5rem;
+    /* Make space for buttons */
+}
+
+/* Animation Enhancements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section.active {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Input Field Icons */
+.form-group {
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 2.5rem;
+    color: var(--dark-tone);
+    font-size: 0.9rem;
+}
+
+/* For icon integration - add these classes to your HTML */
+.name-field::before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+}
+
+.title-field::before {
+    content: "\f02b";
+    font-family: "Font Awesome 6 Free";
+}
+
+.location-field::before {
+    content: "\f3c5";
+    font-family: "Font Awesome 6 Free";
+}
+
+.phone-field::before {
+    content: "\f095";
+    font-family: "Font Awesome 6 Free";
+}
+
+.email-field::before {
+    content: "\f0e0";
+    font-family: "Font Awesome 6 Free";
+}
+
+.website-field::before {
+    content: "\f0ac";
+    font-family: "Font Awesome 6 Free";
+}
+
+.linkedin-field::before {
+    content: "\f08c";
+    font-family: "Font Awesome 6 Brands";
+}
+
+/* Header Component */
+.app-header {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+/* Navigation Component */
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(4px);
+}
+
+.nav-btn.active {
+    background: var(--primary-color);
+    color: white !important;
+    font-weight: 500;
+    box-shadow: 2px 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+/* ==============================================
+   Enhanced Action Buttons
+   ============================================== */
+.action-buttons button {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action-buttons button:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25);
+}
+
+#save-btn {
+    background: #27ae60;
+    border-color: #27ae60;
+}
+
+#save-btn:hover {
+    background: #219a52;
+    border-color: #219a52;
+}
+
+#new-btn {
+    background: #e74c3c;
+    border-color: #e74c3c;
+}
+
+#new-btn:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+/* ==============================================
+   Language Toggle Enhancement
+   ============================================== */
+.language-toggle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.language-toggle button {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.language-toggle button.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.language-toggle button:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Form Components */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    border: 1px solid var(--light-tone);
+    border-radius: 4px;
+    font-family: inherit;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+fieldset {
+    border: 1px solid var(--light-tone);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+/* Button Components */
+.button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+.button--secondary {
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
+
+/* Card Components */
+.experience-item,
+.education-item,
+.project-item,
+.skill-item {
+    background-color: var(--light-tone);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+/* Summary Section Specific */
+#summary-section {
+    background-color: var(--light-tone);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+#summary {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 1.2rem;
+    resize: vertical;
+    width: 100%;
+    min-height: 200px;
+}
+
+#summary:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+#summary-title {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+
+.summary-wrapper {
+    position: relative;
+}
+
+/* Utility Components */
+.modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 4px;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+}
+
+.char-counter {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    bottom: 10px;
+    color: var(--dark-tone);
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    right: 15px;
+}
+
+/* List Components */
+.description-list {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.description-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* State Management */
+.active {
+    display: block;
+}
+
+.section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+    transition-delay: 0.1s;
+}
+
+.editor-area {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Minimum Height Containers */
+#skills-container,
+#experience-container,
+#education-container,
+#certifications-container,
+#projects-container,
+#languages-container {
+    margin: 1rem 0;
+    min-height: 50px;
+}
+
+/* ==============================================
+   Experience Section Enhancements
+   ============================================== */
+#experience-section {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 1rem 0;
+}
+
+#experience-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--light-tone);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experience-item {
+    background: white;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.experience-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-item h3 i {
+    color: var(--dark-tone);
+    font-size: 0.9em;
+}
+
+.experience-item .dates {
+    background: var(--light-tone);
+    border-radius: 4px;
+    color: var(--dark-tone);
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.description-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.description-list li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.description-list li::before {
+    content: "▹";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* ==============================================
+   Responsive Design (Consolidated Media Queries)
+   ============================================== */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    /* Mobile adjustments for all components */
+    .card {
+        padding: var(--space-sm);
+    }
+
+    #header-form {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        padding: 0 var(--space-sm);
+        width: 100%;
+    }
+}

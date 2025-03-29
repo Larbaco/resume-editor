@@ -1,0 +1,69 @@
+:root {
+    /* ===== Blue Tone Palette (Same Names, Better Blues) ===== */
+    --primary-color: #0ea5e9;
+    /* Main interactive blue (buttons/links) */
+    --secondary-color: #0369a1;
+    /* Darker blue (headers/active states) */
+    --background-color: #f8fafc;
+    /* Lightest gray-blue (page background) */
+    --text-color: #1e293b;
+    /* Dark blue-gray (primary text) */
+    --light-tone: #92bbf1;
+    /* Borders/dividers */
+    --dark-tone: #173155;
+    /* Secondary text */
+    --danger-color: #dc2626;
+    /* Red (errors) */
+    --success-color: #16a34a;
+    /* Green (success) */
+
+    /* ===== New Blue Additions (Optional Extras) ===== */
+    --primary-light: #bae6fd;
+    /* Hover states */
+    --primary-dark: #075985;
+    /* Active/focus states */
+    --error-color: #dc2626;
+    --error-bg: #fee2e2;
+    --text-color-light: #64748b;
+    --primary-light: #e0f2fe;
+
+    /* ===== Spacing System (Unchanged) ===== */
+    --space-unit: 1rem;
+    --space-xxs: calc(0.25 * var(--space-unit));
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: var(--space-unit);
+    --space-md: calc(1.5 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+
+    /* ===== Borders/Shadows (Unchanged) ===== */
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+    --border-width: 1px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    /* ===== Transitions (Unchanged) ===== */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* ===== Component Variables (Unchanged) ===== */
+    --baseInfo-z-index: 1000;
+    --baseInfo-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --baseInfo-transition: all 0.3s ease;
+    --baseInfo-accent-width: 4px;
+    --baseInfo-title-spacing: 0.15em;
+
+
+
+    --button-hover-offset: 1px;
+    /* For subtle lift effect */
+    --nav-indicator-width: 3px;
+    /* Active state border */
+    --header-height: 60px;
+    --sidebar-width: 280px;
+    --z-sidebar: 800;
+    --header-z-index: 1000;
+}

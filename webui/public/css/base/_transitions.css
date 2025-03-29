@@ -1,0 +1,50 @@
+/* ===== Section Transitions ===== */
+.section {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal),
+        visibility var(--transition-normal);
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+    animation: fadeIn 0.3s ease-out forwards;
+    transition-delay: 0.1s;
+}
+
+/* ===== Section Transitions ===== */
+.section:not(#header-section) {
+    /* Add exclusion */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+
+.section.active:not(#header-section) {
+    /* Add exclusion */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+    transition-delay: 0.1s;
+}
+
+#baseInfo-section {
+    /* Add these */
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    transition: outline-color var(--transition-normal);
+}
+
+#baseInfo-section:focus-within {
+    outline-color: var(--primary-color);
+}

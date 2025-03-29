@@ -1,0 +1,519 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive resume editor application">
+    <title>Resume Editor</title>
+    <!--- 
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+     --->
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="adr_distai"></div>
+    <div class="app-container">
+        <header class="app-header" aria-label="Application header">
+            <button class="mobile-menu-toggle" aria-label="Open navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Resume Editor</h1>
+            <div class="language-toggle" role="group" aria-label="Language selection">
+                <button id="en-btn" class="" aria-pressed="true">English</button>
+                <button id="pt-btn" aria-pressed="false" class="active">Português</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar" aria-label="Resume sections navigation">
+                <!-- Mobile Close Button (Hidden by Default) -->
+                <button class="sidebar-close" aria-label="Close menu" hidden="">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="sidebar-menu" aria-label="Resume sections">
+                    <nav>
+                        <ul>
+                            <li>
+                                <button class="nav-btn" data-section="baseInfo"><i class="fas fa-user"></i> Informações
+                                    Pessoais</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="summary"><i class="fas fa-file-alt"></i>
+                                    Resumo</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn active" data-section="skills"><i class="fas fa-tools"></i>
+                                    Habilidades</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="experience"><i class="fas fa-briefcase"></i>
+                                    Experiência</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="education"><i class="fas fa-graduation-cap"></i>
+                                    Educação</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="certifications"><i class="fas fa-certificate"></i>
+                                    Certificações</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="projects"><i class="fas fa-project-diagram"></i>
+                                    Projetos</button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="languages"><i class="fas fa-language"></i>
+                                    Idiomas</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Action Buttons (Unchanged Structure) -->
+                <div class="sidebar-actions">
+                    <button id="save-btn" class="action-btn btn--primary" aria-label="Save resume changes"><i
+                            class="fas fa-save"></i> Salvar Alterações</button>
+                    <button id="load-btn" class="action-btn" aria-label="Load resume from file"><i
+                            class="fas fa-folder-open"></i> Carregar Currículo</button>
+                    <button id="new-btn" class="action-btn" aria-label="Create new resume"><i class="fas fa-file"></i>
+                        Novo Currículo</button>
+                </div>
+            </aside>
+
+            <main class="editor-area" aria-label="Resume editor">
+                <!-- baseInfo Section -->
+                <section id="baseInfo-section" class="section" aria-labelledby="baseInfo-title">
+                    <h2 id="baseInfo-title">Informações Pessoais</h2>
+                    <form id="baseInfo-form">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Título Profissional</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-briefcase input-icon"></i>
+                                <input type="text" id="title" name="title" required="">
+                            </div>
+                        </div>
+                        <fieldset class="contact-info">
+                            <legend>Informações de Contato</legend>
+                            <div class="form-group">
+                                <label for="location">Localização</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-map-marker-alt input-icon"></i>
+                                    <input type="text" id="location" name="location" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="tel" id="phone" name="phone" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-globe input-icon"></i>
+                                    <input type="url" id="website" name="website">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin">LinkedIn</label>
+                                <div class="input-with-icon">
+                                    <i class="fab fa-linkedin input-icon"></i>
+                                    <input type="url" id="linkedin" name="linkedin">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <!-- Professional Summary Section -->
+                <section id="summary-section" class="section" aria-labelledby="summary-title">
+                    <h2 id="summary-title">Resumo Profissional</h2>
+                    <div class="summary-wrapper">
+                        <textarea id="summary" rows="6" aria-label="Professional summary text area" maxlength="500"
+                            placeholder="Escreva seu resumo profissional..."></textarea>
+                        <div class="char-counter">
+                            <span id="char-count">380</span>/500
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Skills Section -->
+                <section id="skills-section" class="section active" aria-labelledby="skills-title">
+                    <h2 id="skills-title">Habilidades Técnicas</h2>
+                    <div class="skills-controls">
+                        <div class="search-filter">
+                            <input type="text" id="skill-search" placeholder="Search skills..."
+                                aria-label="Search skills">
+                        </div>
+                        <button id="add-skill-btn" class="add-btn" aria-label="Add new skill">+ Adicionar
+                            Habilidade</button>
+                    </div>
+                    <div id="skills-container" class="skills-container" role="list">
+                        <div class="skill-item">
+                            <div class="skill-view">
+                                <h3>OpenText Service Manager</h3>
+                                <p>Strength: 5/5</p>
+                                <p>Ferramenta principal para gestão de serviços ITIL no cargo atual</p>
+                            </div>
+                            <div class="skill-editor">
+                                <input type="text" class="skill-name" value="OpenText Service Manager">
+                                <div class="strength-select">
+
+                                    <button type="button" data-strength="1" class="active">1</button>
+
+                                    <button type="button" data-strength="2" class="active">2</button>
+
+                                    <button type="button" data-strength="3" class="active">3</button>
+
+                                    <button type="button" data-strength="4" class="active">4</button>
+
+                                    <button type="button" data-strength="5" class="active">5</button>
+
+                                </div>
+                                <textarea
+                                    class="skill-description">Ferramenta principal para gestão de serviços ITIL no cargo atual</textarea>
+                                <div class="edit-buttons">
+                                    <button class="btn btn--primary save-edit">Save</button>
+                                    <button class="btn btn--secondary cancel-edit">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="skill-buttons">
+                                <button class="edit-btn" data-index="0">✎</button>
+                                <button class="remove-btn" data-index="0">×</button>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-view">
+                                <h3>Operações, Monitoramento e Gestão de Software: ITIL</h3>
+                                <p>Strength: 5/5</p>
+                                <p>Profissional certificado com experiência diária de implementação</p>
+                            </div>
+                            <div class="skill-editor">
+                                <input type="text" class="skill-name"
+                                    value="Operações, Monitoramento e Gestão de Software: ITIL">
+                                <div class="strength-select">
+
+                                    <button type="button" data-strength="1" class="active">1</button>
+
+                                    <button type="button" data-strength="2" class="active">2</button>
+
+                                    <button type="button" data-strength="3" class="active">3</button>
+
+                                    <button type="button" data-strength="4" class="active">4</button>
+
+                                    <button type="button" data-strength="5" class="active">5</button>
+
+                                </div>
+                                <textarea
+                                    class="skill-description">Profissional certificado com experiência diária de implementação</textarea>
+                                <div class="edit-buttons">
+                                    <button class="btn btn--primary save-edit">Save</button>
+                                    <button class="btn btn--secondary cancel-edit">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="skill-buttons">
+                                <button class="edit-btn" data-index="1">✎</button>
+                                <button class="remove-btn" data-index="1">×</button>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-view">
+                                <h3>Operações, Monitoramento e Gestão de Software: Rede IPv4</h3>
+                                <p>Strength: 4/5</p>
+                                <p>Gerenciamento de rede corporativa com 500+ dispositivos simultâneos</p>
+                            </div>
+                            <div class="skill-editor">
+                                <input type="text" class="skill-name"
+                                    value="Operações, Monitoramento e Gestão de Software: Rede IPv4">
+                                <div class="strength-select">
+
+                                    <button type="button" data-strength="1" class="active">1</button>
+
+                                    <button type="button" data-strength="2" class="active">2</button>
+
+                                    <button type="button" data-strength="3" class="active">3</button>
+
+                                    <button type="button" data-strength="4" class="active">4</button>
+
+                                    <button type="button" data-strength="5" class="">5</button>
+
+                                </div>
+                                <textarea
+                                    class="skill-description">Gerenciamento de rede corporativa com 500+ dispositivos simultâneos</textarea>
+                                <div class="edit-buttons">
+                                    <button class="btn btn--primary save-edit">Save</button>
+                                    <button class="btn btn--secondary cancel-edit">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="skill-buttons">
+                                <button class="edit-btn" data-index="2">✎</button>
+                                <button class="remove-btn" data-index="2">×</button>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-view">
+                                <h3>Operações, Monitoramento e Gestão de Software: Active Directory</h3>
+                                <p>Strength: 4/5</p>
+                                <p>Implementação de políticas de grupo para infraestrutura de impressão</p>
+                            </div>
+                            <div class="skill-editor">
+                                <input type="text" class="skill-name"
+                                    value="Operações, Monitoramento e Gestão de Software: Active Directory">
+                                <div class="strength-select">
+
+                                    <button type="button" data-strength="1" class="active">1</button>
+
+                                    <button type="button" data-strength="2" class="active">2</button>
+
+                                    <button type="button" data-strength="3" class="active">3</button>
+
+                                    <button type="button" data-strength="4" class="active">4</button>
+
+                                    <button type="button" data-strength="5" class="">5</button>
+
+                                </div>
+                                <textarea
+                                    class="skill-description">Implementação de políticas de grupo para infraestrutura de impressão</textarea>
+                                <div class="edit-buttons">
+                                    <button class="btn btn--primary save-edit">Save</button>
+                                    <button class="btn btn--secondary cancel-edit">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="skill-buttons">
+                                <button class="edit-btn" data-index="3">✎</button>
+                                <button class="remove-btn" data-index="3">×</button>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-view">
+                                <h3>Segurança: Firewall</h3>
+                                <p>Strength: 4/5</p>
+                                <p>Configuração e manutenção de soluções pfSense firewall</p>
+                            </div>
+                            <div class="skill-editor">
+                                <input type="text" class="skill-name" value="Segurança: Firewall">
+                                <div class="strength-select">
+
+                                    <button type="button" data-strength="1" class="active">1</button>
+
+                                    <button type="button" data-strength="2" class="active">2</button>
+
+                                    <button type="button" data-strength="3" class="active">3</button>
+
+                                    <button type="button" data-strength="4" class="active">4</button>
+
+                                    <button type="button" data-strength="5" class="">5</button>
+
+                                </div>
+                                <textarea
+                                    class="skill-description">Configuração e manutenção de soluções pfSense firewall</textarea>
+                                <div class="edit-buttons">
+                                    <button class="btn btn--primary save-edit">Save</button>
+                                    <button class="btn btn--secondary cancel-edit">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="skill-buttons">
+                                <button class="edit-btn" data-index="4">✎</button>
+                                <button class="remove-btn" data-index="4">×</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience-section" class="section" aria-labelledby="experience-title">
+                    <h2 id="experience-title">Experiência Profissional</h2>
+                    <div id="experience-container" class="experience-container" role="list">
+                        <div class="experience-item">
+                            <h3><i class="fas fa-briefcase"></i>Analista DevOps @ Stefanini Brasil, Brasília, BR</h3>
+                            <p class="dates">2024-03 - Presente</p>
+                            <ul class="description-list">
+                                <li>Gerenciamento e otimização de pipelines CI/CD para a Agência Nacional de Mineração,
+                                    garantindo entrega de software eficiente e confiável.</li>
+                                <li>Manutenção e implementação de processos CI/CD para projetos .NET, utilizando
+                                    Kubernetes para gerenciamento de infraestrutura.</li>
+                                <li>Colaboração com equipes de desenvolvimento e operações para simplificar fluxos de
+                                    trabalho de implantação e melhorar a confiabilidade do sistema.</li>
+                                <li>Utilização de Kubernetes para orquestração de contêineres, garantindo infraestrutura
+                                    escalável e resiliente.</li>
+                                <li>Monitoramento e resolução de problemas em pipelines, assegurando tempo mínimo de
+                                    inatividade e rápida resolução de falhas de implantação.</li>
+                                <li>Contribuição para a automação de processos de build, teste e implantação, reduzindo
+                                    intervenção manual e aumentando a eficiência.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3><i class="fas fa-briefcase"></i>Desenvolvedor Full Stack @ Stefanini Brasil, Brasília,
+                                BR</h3>
+                            <p class="dates">2021-06 - 2024-02</p>
+                            <ul class="description-list">
+                                <li>Atuei no desenvolvimento e administração do Sistema de Gerenciamento de Serviços
+                                    ITIL (Micro Focus Service Manager) no Banco Central, liderando a gestão e manutenção
+                                    do sistema com foco em eficiência e conformidade com as melhores práticas do setor.
+                                </li>
+                                <li>Utilizei tecnologias como JavaScript, PowerShell e RAD para otimizar processos e
+                                    garantir a operação contínua do sistema.</li>
+                                <li>Minha atuação resultou em melhorias significativas na eficiência operacional,
+                                    alinhando as soluções às demandas dinâmicas do ambiente corporativo e contribuindo
+                                    para a entrega de serviços de alta qualidade.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3><i class="fas fa-briefcase"></i>Suporte T.I. @ Centro Universitário UniCathedral, Barra
+                                do Garças, BR</h3>
+                            <p class="dates">2018-02 - 2020-02</p>
+                            <ul class="description-list">
+                                <li>Garanti o funcionamento adequado e propus melhorias na área de TI da faculdade para
+                                    agregar valor por meio de manutenção planejada e monitoramento de vários sistemas.
+                                </li>
+                                <li>Forneci suporte de hardware para desktops e servidores, monitorei sistemas usando o
+                                    Intelbras NVR e gerenciei redes com fio e sem fio com o firewall pfSense, suportando
+                                    mais de 500 dispositivos conectados simultaneamente.</li>
+                                <li>Gerenciei impressoras multifuncionais com escaneamento em rede, controladas por meio
+                                    do Active Directory do Windows com políticas de grupo personalizadas.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3><i class="fas fa-briefcase"></i>Suporte T.I. @ Única Consultores de Engenharia Urbana,
+                                Cuiabá, BR</h3>
+                            <p class="dates">2017-08 - 2017-12</p>
+                            <ul class="description-list">
+                                <li>Garanti o funcionamento adequado e propus melhorias dentro do escopo de TI do
+                                    escritório para adicionar valor por meio de manutenção planejada e monitoramento de
+                                    diversos sistemas.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3><i class="fas fa-briefcase"></i>Tutor @ UFMT</h3>
+                            <p class="dates">2012-09 - 2015-08</p>
+                            <ul class="description-list">
+                                <li>Realizei atividades extracurriculares com o objetivo de esclarecer dúvidas e
+                                    auxiliar os estudantes na área de Linguagens de Programação Comerciais.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education-section" class="section" aria-labelledby="education-title">
+                    <h2 id="education-title">Formação Acadêmica</h2>
+                    <div id="education-container" class="education-container" role="list">
+                        <div class="education-item">
+                            <h3>Bacharelado em Ciência da Computação</h3>
+                            <p>Universidade Federal de Mato Grosso</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section id="certifications-section" class="section" aria-labelledby="certifications-title">
+                    <h2 id="certifications-title">Certificações</h2>
+                    <div id="certifications-container" class="certifications-container" role="list">
+                        <div class="certification-item">• ITIL Foundation v4</div>
+
+                        <div class="certification-item">• Certificado MITx...</div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects-section" class="section" aria-labelledby="projects-title">
+                    <h2 id="projects-title">Projetos</h2>
+                    <div id="projects-container" class="projects-container" role="list">
+                        <div class="project-item">
+                            <h3>Automação de Pipeline CI/CD</h3>
+                            <p>Construção de pipeline baseado em Kubernetes...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages Section -->
+                <section id="languages-section" class="section" aria-labelledby="languages-title">
+                    <h2 id="languages-title">Idiomas</h2>
+                    <div id="languages-container" class="languages-container" role="list">
+                        <div class="language-item">• Português (Nativo)</div>
+
+                        <div class="language-item">• Inglês (Profissional)</div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- File Operations Modal (Keep original structure) -->
+    <dialog id="file-modal" class="modal" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Close modal">×</button>
+            <h2 id="modal-title">File Operations</h2>
+            <div class="modal-options">
+                <section aria-labelledby="load-title">
+                    <h3 id="load-title">Load Resume</h3>
+                    <input type="file" id="file-input" accept=".json" aria-label="Select resume file">
+                </section>
+                <section aria-labelledby="save-title">
+                    <h3 id="save-title">Save Resume</h3>
+                    <button id="download-en" aria-label="Download English resume">Download English</button>
+                    <button id="download-pt" aria-label="Download Portuguese resume">Download Portuguese</button>
+                </section>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Keep original debug script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const requiredElements = [
+                'name', 'title', 'location', 'phone', 'email', 'website', 'linkedin',
+                'skills-container', 'experience-container', 'education-container',
+                'certifications-container', 'projects-container', 'languages-container',
+                'en-btn', 'pt-btn', 'save-btn', 'load-btn', 'new-btn', 'add-skill-btn'
+            ];
+
+            console.group('DOM Element Verification');
+            requiredElements.forEach(id => {
+                const element = document.getElementById(id);
+                console.log(`#${id}:`, element ? '✓ Found' : '✖ MISSING', element);
+            });
+            console.groupEnd();
+        });
+    </script>
+
+    <script type="module" src="/js/main.js"></script>
+
+
+    <div class="sidebar-overlay"></div>
+    <div at-magnifier-wrapper="">
+        <div class="at-theme-light">
+            <div class="at-base notranslate" translate="no">
+                <div class="EuwGd" style="top: 0px; left: 0px;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+/* components/_buttons.css */
+/* ===== Base Button Styles ===== */
+.btn {
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    gap: var(--space-xs);
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    transition: all var(--transition-normal);
+  }
+  
+  /* ===== Primary Action Buttons (Save/Load/New) ===== */
+  .btn--primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+  }
+  .btn--primary:hover {
+    background-color: var(--dark-tone);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* ===== Danger Button ===== */
+  .btn--danger {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  /* ===== Language Toggle ===== */
+  .language-toggle {
+    display: flex;
+    gap: var(--space-xs);
+    background: var(--light-tone);
+    padding: var(--space-xxs);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .language-toggle button {
+    background: transparent;
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--dark-tone);
+    transition: var(--transition-fast);
+  }
+  
+  .language-toggle button.active {
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .language-toggle button:not(.active):hover {
+    color: var(--primary-color);
+  }
+  
+  /* ===== Navigation Buttons ===== */
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-sm);
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    border-left: 3px solid transparent;
+  }
+  
+  .nav-btn:hover {
+    color: var(--primary-color);
+    background: var(--light-tone);
+  }
+  
+  .nav-btn.active {
+    border-left-color: var(--primary-color);
+    background: var(--light-tone);
+    font-weight: 600;
+  }
+  
+  .nav-btn i {
+    width: 24px;
+    text-align: center;
+  }
+  
+  /* ===== Icon Buttons ===== */
+  .btn--icon {
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    padding: 0;
+    background: var(--light-tone);
+    color: var(--primary-color);
+  }

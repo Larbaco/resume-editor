@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive resume editor application">
+    <title>Resume Editor</title>
+    <!--- 
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+     --->
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header" aria-label="Application header">
+            <button class="mobile-menu-toggle" aria-label="Open navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Resume Editor</h1>
+            <div class="language-toggle" role="group" aria-label="Language selection">
+                <button id="en-btn" class="active" aria-pressed="true">English</button>
+                <button id="pt-btn" aria-pressed="false">Português</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar" aria-label="Resume sections navigation">
+                <!-- Mobile Close Button (Hidden by Default) -->
+                <button class="sidebar-close" aria-label="Close menu" hidden>
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="sidebar-menu" aria-label="Resume sections">
+                    <nav>
+                        <ul>
+                            <li>
+                                <button class="nav-btn active" data-section="baseInfo">
+                                    <i class="fas fa-user"></i>
+                                    <span class="nav-btn-text">Basic Information</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="summary">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span class="nav-btn-text">Summary</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="skills">
+                                    <i class="fas fa-tools"></i>
+                                    <span class="nav-btn-text">Skills</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="experience">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span class="nav-btn-text">Experience</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="education">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span class="nav-btn-text">Education</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="certifications">
+                                    <i class="fas fa-certificate"></i>
+                                    <span class="nav-btn-text">Certifications</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="projects">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span class="nav-btn-text">Projects</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-section="languages">
+                                    <i class="fas fa-language"></i>
+                                    <span class="nav-btn-text">Languages</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Action Buttons (Unchanged Structure) -->
+                <div class="sidebar-actions">
+                    <button id="save-btn" class="action-btn btn--primary" aria-label="Save resume changes">
+                        <i class="fas fa-save"></i>
+                        <span>Save Changes</span>
+                    </button>
+                    <button id="load-btn" class="action-btn" aria-label="Load resume from file">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Load Resume</span>
+                    </button>
+                    <button id="new-btn" class="action-btn" aria-label="Create new resume">
+                        <i class="fas fa-file"></i>
+                        <span>New Resume</span>
+                    </button>
+                </div>
+            </aside>
+
+            <main class="editor-area" aria-label="Resume editor">
+                <!-- baseInfo Section -->
+                <section id="baseInfo-section" class="section active" aria-labelledby="baseInfo-title">
+                    <h2 id="baseInfo-title"><i class="fas fa-user"></i> Basic Information</h2>
+                    <form id="baseInfo-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Professional Title</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-briefcase input-icon"></i>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                        </div>
+                        <fieldset class="contact-info">
+                            <legend><i class="fas fa-address-book"></i> Contact Information</legend>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-map-marker-alt input-icon"></i>
+                                    <input type="text" id="location" name="location" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-globe input-icon"></i>
+                                    <input type="url" id="website" name="website">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin">LinkedIn</label>
+                                <div class="input-with-icon">
+                                    <i class="fab fa-linkedin input-icon"></i>
+                                    <input type="url" id="linkedin" name="linkedin">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <!-- Professional Summary Section -->
+                <section id="summary-section" class="section" aria-labelledby="summary-title">
+                    <h2 id="summary-title"><i class="fas fa-file-alt"></i> Professional Summary</h2>
+                    <div class="summary-wrapper">
+                        <textarea id="summary" rows="6" aria-label="Professional summary text area" maxlength="500"
+                            placeholder="Write your professional summary..."></textarea>
+                        <div class="char-counter">
+                            <span id="char-count">0</span>/500
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Skills Section -->
+                <section id="skills-section" class="section" aria-labelledby="skills-title">
+                    <h2 id="skills-title"><i class="fas fa-tools"></i> Technical Skills</h2>
+                    <div class="skills-controls">
+                        <div class="search-filter">
+                            <input type="text" id="skill-search" placeholder="Search skills..."
+                                aria-label="Search skills">
+                        </div>
+                        <button id="add-skill-btn" class="add-btn" aria-label="Add new skill">
+                            <i class="fas fa-plus-circle"></i> Add Skill
+                        </button>
+                    </div>
+                    <div id="skills-container" class="skills-container" role="list"></div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience-section" class="section" aria-labelledby="experience-title">
+                    <h2 id="experience-title">Work Experience</h2>
+                    <div id="experience-container" class="experience-container" role="list"></div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education-section" class="section" aria-labelledby="education-title">
+                    <h2 id="education-title">Education</h2>
+                    <div id="education-container" class="education-container" role="list"></div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section id="certifications-section" class="section" aria-labelledby="certifications-title">
+                    <h2 id="certifications-title">Certifications</h2>
+                    <div id="certifications-container" class="certifications-container" role="list"></div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects-section" class="section" aria-labelledby="projects-title">
+                    <h2 id="projects-title">Projects</h2>
+                    <div id="projects-container" class="projects-container" role="list"></div>
+                </section>
+
+                <!-- Languages Section -->
+                <section id="languages-section" class="section" aria-labelledby="languages-title">
+                    <h2 id="languages-title">Languages</h2>
+                    <div id="languages-container" class="languages-container" role="list"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- File Operations Modal (Keep original structure) -->
+    <dialog id="file-modal" class="modal" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Close modal">&times;</button>
+            <h2 id="modal-title">File Operations</h2>
+            <div class="modal-options">
+                <section aria-labelledby="load-title">
+                    <h3 id="load-title">Load Resume</h3>
+                    <input type="file" id="file-input" accept=".json" aria-label="Select resume file">
+                </section>
+                <section aria-labelledby="save-title">
+                    <h3 id="save-title">Save Resume</h3>
+                    <button id="download-en" aria-label="Download English resume">Download English</button>
+                    <button id="download-pt" aria-label="Download Portuguese resume">Download Portuguese</button>
+                </section>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Keep original debug script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const requiredElements = [
+                'name', 'title', 'location', 'phone', 'email', 'website', 'linkedin',
+                'skills-container', 'experience-container', 'education-container',
+                'certifications-container', 'projects-container', 'languages-container',
+                'en-btn', 'pt-btn', 'save-btn', 'load-btn', 'new-btn', 'add-skill-btn'
+            ];
+
+            console.group('DOM Element Verification');
+            requiredElements.forEach(id => {
+                const element = document.getElementById(id);
+                console.log(`#${id}:`, element ? '✓ Found' : '✖ MISSING', element);
+            });
+            console.groupEnd();
+        });
+    </script>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

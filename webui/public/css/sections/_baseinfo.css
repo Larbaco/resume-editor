@@ -1,0 +1,55 @@
+#baseInfo-section {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-sm) 0;
+    padding: var(--space-md);
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+#baseInfo-section:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+#baseInfo-title {
+    border-bottom: 2px solid var(--light-tone);
+    color: var(--primary-color);
+    display: flex;
+    font-size: 1.5rem;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+}
+
+.baseInfo-contact {
+    border: 1px solid var(--light-tone);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    grid-column: 1 / -1;
+}
+
+.baseInfo-contact legend {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#baseInfo-section::before {
+    content: none;
+}
+
+.form-group i {
+    position: absolute;
+    left: 10px;
+    top: 2rem;
+    color: var(--dark-tone);
+    font-size: 0.9rem;
+}

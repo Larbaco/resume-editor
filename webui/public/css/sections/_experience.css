@@ -1,0 +1,13 @@
+/* ===== Experience Section ===== */
+.experience-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.dates {
+    background: var(--light-tone);
+    display: inline-block;
+    padding: var(--space-xxs) var(--space-xs);
+    border-radius: var(--border-radius-sm);
+}

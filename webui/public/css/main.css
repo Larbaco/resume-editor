@@ -1,0 +1,32 @@
+/* ===== Revised Main Import File ===== */
+/* Abstracts - Must come first */
+@import './abstracts/_variables.css';
+@import './abstracts/_animations.css';
+
+/* Base - Fundamental reset and typography */
+@import './base/_reset.css';
+@import './base/_transitions.css';
+@import './base/_typography.css';
+
+/* Layout - Global structure */
+@import './layout/_grid.css';
+@import './layout/_sidebar.css';
+@import './layout/_header.css';
+/* @import './layout/_navigation.css'; */
+
+/* Components - Reusable UI elements */
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_forms.css';
+@import './components/_modal.css';
+
+/* Sections - Page-specific styles */
+@import './sections/_baseInfo.css';
+@import './sections/_skills.css';
+@import './sections/_experience.css';
+@import './sections/_summary.css';
+
+/* Utilities - Last for proper override */
+@import './utilities/_utilities.css';
+/* @import './utilities/_responsive.css'; */
+

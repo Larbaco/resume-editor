@@ -1,0 +1,38 @@
+/* ===== Header Layout Structure ===== */
+.app-header {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm);
+    position: sticky;
+    top: 0;
+    z-index: var(--header-z-index);
+    box-shadow: var(--header-shadow);
+    transition: var(--header-transition);
+    height: var(--header-height);
+}
+
+.app-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 var(--space-sm);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+}

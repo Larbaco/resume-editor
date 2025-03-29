@@ -1,0 +1,12 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+#header-title {
+    font-size: 1.5rem;
+}
+
+.skill-item h3 {
+    font-size: 1.1rem;
+}
